@@ -18,4 +18,4 @@ Nabila Ghoni (G14180064)
 
 [![DataDownloader](https://github.com/WillOf-D/MDS_UTS_Kelompok_02/actions/workflows/DataDownloader.yml/badge.svg?event=check_run)](https://github.com/WillOf-D/MDS_UTS_Kelompok_02/actions/workflows/DataDownloader.yml)
 
-
+[![DataBroadcaster](https://github.com/WillOf-D/MDS_UTS_Kelompok_02/actions/workflows/DataBroadcaster.yml/badge.svg?event=check_run)](https://github.com/WillOf-D/MDS_UTS_Kelompok_02/actions/workflows/DataBroadcaster.yml)
