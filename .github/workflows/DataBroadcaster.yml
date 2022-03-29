@@ -2,7 +2,7 @@ name: DataBroadcaster
 
 on:
   schedule:
-    -  cron: '37 14 * *  1-5'  # Every weekdays on 20:30 UST 
+    -  cron: '48 14 * *  1-5'  # Every weekdays on 20:30 UST 
 
 jobs:
   publish-data:
