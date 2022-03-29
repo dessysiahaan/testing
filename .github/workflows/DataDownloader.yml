@@ -6,11 +6,11 @@
 # See https://github.com/r-lib/actions/tree/master/examples#readme for
 # additional example workflows available for the R community.
 
-name: DataDownloader
+name: DataDownloading
 
 on:
   schedule:
-    - cron: '15 15 * *  1-5'  # Every weekdays on 20:15 UST 
+    - cron: '15 20 * *  1-5'  # Every weekdays on 20:15 UST 
 
 jobs:
   save-data:
