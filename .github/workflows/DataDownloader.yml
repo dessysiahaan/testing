@@ -10,7 +10,7 @@ name: DataDownloader
 
 on:
   schedule:
-    - cron: '05 15 * *  1-5'  # Every weekdays on 20:15 UST 
+    - cron: '15 15 * *  1-5'  # Every weekdays on 20:15 UST 
 
 jobs:
   save-data:
