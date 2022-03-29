@@ -1,4 +1,4 @@
-name: DataBroadcaster
+name: DataBroadcasting
 
 on:
   schedule:
