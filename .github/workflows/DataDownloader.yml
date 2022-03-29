@@ -1,0 +1,31 @@
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+#
+# See https://github.com/r-lib/actions/tree/master/examples#readme for
+# additional example workflows available for the R community.
+
+name: DataDownloader
+
+on:
+  schedule:
+    - cron: '15 20 * *  1-5'  # Every weekdays on 20:15 UST 
+
+jobs:
+  save-data:
+    runs-on: macOS-latest
+    env:
+      ELEPHANT_SQL_DBNAME: ${{ secrets.ELEPHANT_SQL_DBNAME }}
+      ELEPHANT_SQL_HOST: ${{ secrets.ELEPHANT_SQL_HOST }}
+      ELEPHANT_SQL_USER: ${{ secrets.ELEPHANT_SQL_USER }}
+      ELEPHANT_SQL_PASSWORD: ${{ secrets.ELEPHANT_SQL_PASSWORD }}
+    steps:
+      - uses: actions/checkout@v2
+      - uses: r-lib/actions/setup-r@master
+      - name: Install RPostgreSQL package
+        run: Rscript -e 'install.packages("RPostgreSQL", dependencies = TRUE)'
+      - name: Install RCurl package
+        run: Rscript -e 'install.packages("RCurl", dependencies = TRUE)'
+      - name: Run The R Script
+        run: Rscript DataDownloader.R
