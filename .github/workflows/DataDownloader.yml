@@ -21,7 +21,7 @@ jobs:
       ELEPHANT_SQL_USER: ${{ secrets.ELEPHANT_SQL_USER }}
       ELEPHANT_SQL_PASSWORD: ${{ secrets.ELEPHANT_SQL_PASSWORD }}
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: r-lib/actions/setup-r@master
       - name: Install RPostgreSQL package
         run: Rscript -e 'install.packages("RPostgreSQL", dependencies = TRUE)'
