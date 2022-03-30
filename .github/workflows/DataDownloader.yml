@@ -27,5 +27,12 @@ jobs:
         run: Rscript -e 'install.packages("RPostgreSQL", dependencies = TRUE)'
       - name: Install RCurl package
         run: Rscript -e 'install.packages("RCurl", dependencies = TRUE)'
+      - name: Create and populate .Renviron file
+        run: |
+          echo ELEPHANT_SQL_DBNAME="$ELEPHANT_SQL_DBNAME" >> ~/.Renviron
+          echo ELEPHANT_SQL_HOST="$ELEPHANT_SQL_HOST" >> ~/.Renviron
+          echo ELEPHANT_SQL_USER="$ELEPHANT_SQL_USER" >> ~/.Renviron
+          echo ELEPHANT_SQL_PASSWORD="$ELEPHANT_SQL_PASSWORD" >> ~/.Renviron
+          shell: bash
       - name: Run The R Script
         run: Rscript DataDownloader.R
