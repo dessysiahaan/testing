@@ -7,6 +7,9 @@ on:
 jobs:
   publish-data:
     runs-on: macOS-latest
+    strategy:
+      matrix:
+        r-version: ['3.6.3', '4.1.1']
     env:
       ELEPHANT_SQL_DBNAME: ${{ secrets.ELEPHANT_SQL_DBNAME }}
       ELEPHANT_SQL_HOST: ${{ secrets.ELEPHANT_SQL_HOST }}
