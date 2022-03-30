@@ -1,11 +1,3 @@
-# This workflow uses actions that are not certified by GitHub.
-# They are provided by a third-party and are governed by
-# separate terms of service, privacy policy, and support
-# documentation.
-#
-# See https://github.com/r-lib/actions/tree/master/examples#readme for
-# additional example workflows available for the R community.
-
 name: DataDownloading
 
 on: workflow_dispatch
@@ -28,9 +20,4 @@ jobs:
       - name: Install RCurl package
         run: Rscript -e 'install.packages("RCurl", dependencies = TRUE)'
       - name: Run The R Script
-        env:
-          ELEPHANT_SQL_DBNAME: ${{ secrets.ELEPHANT_SQL_DBNAME }}
-          ELEPHANT_SQL_HOST: ${{ secrets.ELEPHANT_SQL_HOST }}
-          ELEPHANT_SQL_USER: ${{ secrets.ELEPHANT_SQL_USER }}
-          ELEPHANT_SQL_PASSWORD: ${{ secrets.ELEPHANT_SQL_PASSWORD }}
         run: Rscript DataDownloader.R
