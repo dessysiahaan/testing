@@ -10,7 +10,7 @@ name: DataDownloading
 
 on:
   schedule:
-    - cron: '0,5,10,15,20,25,30,35,40,45,50,55 * * *  1-5'  # Every weekdays on 20:15 UST 
+    - cron: '0,5,10,15,20,25,30,35,40,45,50,55 * * *  *'  # Every weekdays on 20:15 UST 
 
 jobs:
   save-data:
