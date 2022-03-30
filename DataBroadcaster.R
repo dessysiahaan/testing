@@ -1,3 +1,6 @@
+
+
+
 # Create API Database ElephantSQL 
 
 library(RPostgreSQL)
@@ -7,9 +10,9 @@ drv <- dbDriver("PostgreSQL")
 
 con <- dbConnect(drv,
                  dbname = Sys.getenv("ELEPHANT_SQL_DBNAME"), 
-                 host = Sys.getenv("ELEPHANT_SQL_HOST"),
+                 host = Sys.getenv("ELEPHANT_SQL_HOST"), 
                  port = 5432,
-                 user = Sys.getenv("ELEPHANT_SQL_USER"),
+                 user = Sys.getenv("ELEPHANT_SQL_USER"), 
                  password = Sys.getenv("ELEPHANT_SQL_PASSWORD")
 )
 
@@ -79,9 +82,9 @@ library(rtweet)
 ## Create Twitter token
 yield_curve_token <- rtweet::create_token(
   app = "Will_of_D",
-  consumer_key =    Sys.getenv("TWITTER_CONSUMER_API_KEY"),
-  consumer_secret = Sys.getenv("TWITTER_CONSUMER_API_SECRET"),
-  access_token =    Sys.getenv("TWITTER_ACCESS_TOKEN"),
+  consumer_key =    Sys.getenv("TWITTER_CONSUMER_API_KEY"), 
+  consumer_secret = Sys.getenv("TWITTER_CONSUMER_API_SECRET"), 
+  access_token =    Sys.getenv("TWITTER_ACCESS_TOKEN"), 
   access_secret =   Sys.getenv("TWITTER_ACCESS_TOKEN_SECRET")
 )
 
