@@ -7,11 +7,11 @@ drv <- dbDriver("PostgreSQL")
 
 
 con <- dbConnect(drv,
-                 dbname = Sys.getenv("ELEPHANT_SQL_DBNAME"), 
-                 host = Sys.getenv("ELEPHANT_SQL_HOST"),
+                 dbname = ELEPHANT_SQL_DBNAME, 
+                 host = ELEPHANT_SQL_HOST, 
                  port = 5432,
-                 user = Sys.getenv("ELEPHANT_SQL_USER"),
-                 password = Sys.getenv("ELEPHANT_SQL_PASSWORD")
+                 user = ELEPHANT_SQL_USER, 
+                 password = ELEPHANT_SQL_PASSWORD
 )
 
 
