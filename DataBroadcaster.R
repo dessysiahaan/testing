@@ -1,6 +1,3 @@
-
-
-
 # Create API Database ElephantSQL 
 
 library(RPostgreSQL)
@@ -36,6 +33,10 @@ df_chart[10,] <- cbind(10, df_latest$X10.Yr)
 df_chart[11,] <- cbind(20, df_latest$X20.Yr)
 df_chart[12,] <- cbind(30, df_latest$X30.Yr)
 
+## 1st Hashtag
+hashtag <- c("UST", "yieldcurve", "ManajemenData","ManajemenDataStatistika", "github","rvest","rtweet", "ElephantSQL", "SQL", "bot", "opensource", "ggplot2","PostgreSQL","RPostgreSQL")
+samp_word <- sample(hashtag, 1)
+
 
 # Latest Status
 status_details <- paste0(
@@ -50,7 +51,8 @@ status_details <- paste0(
   "UST 20-year: ", df_latest$X20.Yr, "\n",
   "UST 30-year: ", df_latest$X30.Yr, "\n",
   "\n",
-  "\n"
+  "\n",
+  "#", samp_word
   )
 
 # Latest Chart
@@ -73,7 +75,6 @@ pic <- ggplot(df_chart) +
 
 pic_file <- tempfile( fileext = ".png")
 ggsave(pic_file, plot = pic, device = "png", dpi = 144, width = 8, height = 8, units = "in" )
-
 
 
 # Publish to Twitter
