@@ -1,8 +1,8 @@
 name: DataBroadcasting
 
-on: workflow_dispatch
-  #schedule:
-    #-  cron: '15 20 * * 1-5'  # Every weekdays on 20:30 UST 
+on: 
+  schedule:
+    -  cron: '15 20 * * 1-5'  # Every weekdays on 20:30 UST 
 
 jobs:
   publish-data:
