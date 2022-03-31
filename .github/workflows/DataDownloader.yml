@@ -1,0 +1,24 @@
+name: DataDownloading
+
+on:
+  schedule:
+    -  cron: '* * * * *'  # Every weekdays on 20:30 UST
+
+
+jobs:
+  downloading-data:
+    runs-on: macOS-latest
+   env:
+      ELEPHANT_SQL_DBNAME: ${{ secrets.ELEPHANT_SQL_DBNAME }}
+      ELEPHANT_SQL_HOST: ${{ secrets.ELEPHANT_SQL_HOST }}
+      ELEPHANT_SQL_USER: ${{ secrets.ELEPHANT_SQL_USER }}
+      ELEPHANT_SQL_PASSWORD: ${{ secrets.ELEPHANT_SQL_PASSWORD }}
+    steps:
+      - uses: actions/checkout@v2
+      - uses: r-lib/actions/setup-r@master
+      - name: Install RPostgreSQL package
+        run: Rscript -e 'install.packages("RPostgreSQL", dependencies = TRUE)'
+      - name: Install RCurl package
+        run: Rscript -e 'install.packages("RCurl", dependencies = TRUE)'
+      - name: Run The R Script
+        run: Rscript DataDownloader.R
